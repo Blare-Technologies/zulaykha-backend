@@ -20,7 +20,7 @@ app.use(express.json());
 
 const allowedOrigins = [
     "https://zga-website.netlify.app",
-    "http://localhost:3000"
+    "https://zga-website.vercel.app"
 ];
 
 const corsOptions = {
