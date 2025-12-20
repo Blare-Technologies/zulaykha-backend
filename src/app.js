@@ -14,7 +14,9 @@ const app = express()
 const PORT = 8000 || process.env.PORT
 
 // apply helmet
-app.use(helmet())
+app.use(helmet());
+
+app.use(express.json());
 
 const allowedOrigins = [
     "https://zga-website.netlify.app",
@@ -40,7 +42,6 @@ app.options('*', cors(corsOptions));
 
 ConnectToMongo();
 
-app.use(express.json())
 
 
 const apiLimiter = rateLimit({
