@@ -19,7 +19,7 @@ app.use(helmet());
 app.use(express.json());
 
 const allowedOrigins = [
-    "https://zga-website.netlify.app",
+    "https://zga-website.netlify.app/",
     "http://localhost:3000"
 ];
 
