@@ -15,18 +15,23 @@ const PORT = 8000 || process.env.PORT
 
 // apply helmet
 app.use(helmet())
+app.use(express.json())
 
 const corsOptions = {
-    origin: "*"
+    origin: [
+    "https://zga-website.netlify.app/"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
 };
   
 app.use(cors(corsOptions));
   
-app.options('*', cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 ConnectToMongo();
 
-app.use(express.json())
 
 
 const apiLimiter = rateLimit({
@@ -47,3 +52,8 @@ app.use('/api/v1', paymentRouter)
 app.listen(PORT, ()=> {
     console.log(`Server is listening on port ${PORT}`);
 })
+
+
+
+
+walk me through deploying this app on vercel and check it out in the browser
