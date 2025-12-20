@@ -47,14 +47,14 @@ ConnectToMongo();
 
 
 
-const apiLimiter = rateLimit({
-    windowMs: 60 * 1000,
-    max: 5,
-    message: "Too many requests from this IP, please try again later"
-})
+// const apiLimiter = rateLimit({
+//     windowMs: 60 * 1000,
+//     max: 5,
+//     message: "Too many requests from this IP, please try again later"
+// })
 
-// apply rate limit to all routes
-app.use(apiLimiter)
+// // apply rate limit to all routes
+// app.use(apiLimiter)
 
 
 app.use('/auth', userRouter);
