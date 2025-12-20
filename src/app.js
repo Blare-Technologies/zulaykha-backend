@@ -19,19 +19,19 @@ app.use(helmet());
 app.use(express.json());
 
 const allowedOrigins = [
-    "https://zga-website.netlify.app",
+    "https://zga-website.netlify.app/",
     "http://localhost:3000"
 ];
 
 const corsOptions = {
-    // origin: function (origin, callback) {
-    //     if (!origin || allowedOrigins.includes(origin)) {
-    //         callback(null, true);
-    //     } else {
-    //         callback(new Error("Not allowed by CORS"));
-    //     }
-    // },
-    origin: '*',
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    // origin: '*',
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
