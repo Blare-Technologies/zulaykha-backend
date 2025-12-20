@@ -52,8 +52,3 @@ app.use('/api/v1', paymentRouter)
 app.listen(PORT, ()=> {
     console.log(`Server is listening on port ${PORT}`);
 })
-
-
-
-
-walk me through deploying this app on vercel and check it out in the browser
