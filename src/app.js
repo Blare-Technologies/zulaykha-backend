@@ -33,8 +33,8 @@ const corsOptions = {
     //         callback(null,false);
     //     }
     // },
-    origin: allowedOrigins,
-    // origin: '*',
+    // origin: allowedOrigins,
+    origin: '*',
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
